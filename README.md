@@ -1,6 +1,6 @@
 # Modularity workshop
 
-** This is still a work in progress. **
+**This is still a work in progress.**
 
 This workshop should teach you how to create modules for your Fedora RPMs.
 
