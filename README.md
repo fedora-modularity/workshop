@@ -14,29 +14,28 @@ The plan is to utilize existing guides and just link to them.
 3. [Workflow](#workflow)
 4. [`mbs-build`](#mbs-build)
 5. [Testing](#testing)
-6. [Modular dnf](#modular-dnf)
 7. [Feedback](#we-need-your-feedback)
 8. Beer
 
 
-## The workshop
+# The workshop
 
 
-### 1-minute-intro
+## 1-minute-intro
 
- * decouple component version from an OS release
+ * decouple component version from an [OS release](https://docs.pagure.org/modularity/)
  * provide a solution for component maintainers to supply more versions of one component
  * lifecycles and support level can vary between modules
  * module authors to define how the module is meant to be built and utilized by users
 
 
-### modulemd
+## modulemd
 
  * a specification
  * a library
 
 
-#### The specification
+### The specification
 
  * [link](https://pagure.io/modulemd/blob/master/f/spec.yaml)
  * [a real example](http://pkgs.fedoraproject.org/cgit/modules/nodejs.git/tree/nodejs.yaml?h=f26)
@@ -56,7 +55,7 @@ The plan is to utilize existing guides and just link to them.
  * API
 
 
-### Workflow
+## Workflow
 
 [Guide](https://docs.pagure.org/modularity/development/building-modules.html)
 
@@ -64,7 +63,7 @@ The plan is to utilize existing guides and just link to them.
  * [branching](https://fedoraproject.org/wiki/Changes/ArbitraryBranching#Current_status)
  * bootstrapping
 
-#### Modularity tools
+### Modularity tools
 
 [Link](https://pagure.io/modularity/modularity-tools)
 
@@ -73,12 +72,12 @@ $ mod-tools rpm2module nodejs npm
 ```
 
 
-#### Figuring out dependencies
+### Figuring out dependencies
 
 [Link](https://github.com/fedora-modularity/depchase)
 
 
-### `mbs-build`
+## `mbs-build`
 
 [Link](https://pagure.io/fm-orchestrator/)
 
@@ -86,18 +85,11 @@ $ mod-tools rpm2module nodejs npm
 [Infrastructure builds](https://docs.pagure.org/modularity/development/building-modules/building-infra.html)
 
 
-### Testing
+## Testing
 
 ~~Modularity testing framework~~ [Meta test family](https://github.com/fedora-modularity/meta-test-family)
 
-[Guide](http://meta-test-family.readthedocs.io/en/latest/user_guide/index.html)
+[MTF Guide](http://meta-test-family.readthedocs.io/en/latest/user_guide/index.html)
 
 
-### Modular dnf
-
-Just use `dnf` module.
-
-Except you need a modular compose.
-
-
-### We need your feedback!
+## We need your feedback!
