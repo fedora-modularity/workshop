@@ -86,17 +86,64 @@ Modulemd is agnostic of packaging formats (at the same time, it's implemnted for
 $ mod-tools rpm2module nodejs npm
 ```
 
+It will get us this modulemd:
+
+```
+data:
+  api:
+    rpms: [nodejs, npm]
+  components:
+    rpms:
+      http-parser: {rationale: Build and runtime dependency.}
+      nodejs: {buildorder: 10, rationale: Runtime dependency.}
+  dependencies:
+    buildrequires: {base-runtime: f26, shared-userspace: f26}
+    requires: {base-runtime: f26, shared-userspace: f26}
+  description: ''
+  license:
+    module: [MIT]
+  summary: ''
+document: modulemd
+version: 1
+```
+
 
 ### Figuring out dependencies
 
-[Link](https://github.com/fedora-modularity/depchase)
+[depchase](https://github.com/fedora-modularity/depchase)
+
+```
+$ ./depchase -a x86_64 -c ./repos.cfg.sample resolve nodejs npm
+http-parser-2.7.1-5.fc26.x86_64
+compat-openssl10-1:1.0.2j-6.fc26.x86_64
+pcre-8.41-1.fc27.x86_64
+p11-kit-trust-0.23.7-1.fc27.x86_64
+sed-4.4-1.fc26.x86_64
+libicu-57.1-4.fc26.x86_64
+libtasn1-4.12-1.fc27.x86_64
+grep-3.1-1.fc27.x86_64
+ca-certificates-2017.2.16-2.fc27.noarch
+libuv-1:1.13.1-1.fc27.x86_64
+filesystem-3.3-1.fc27.x86_64
+libacl-2.2.52-16.fc27.x86_64
+tzdata-2017b-1.fc27.noarch
+libatomic_ops-7.4.6-1.fc27.x86_64
+fedora-release-27-0.2.noarch
+make-1:4.2.1-2.fc26.x86_64
+libattr-2.4.47-19.fc27.x86_64
+fedora-repos-27-0.2.noarch
+fedora-repos-rawhide-27-0.2.noarch
+npm-1:5.3.0-1.8.2.1.1.fc27.x86_64
+coreutils-8.27-13.fc27.x86_64
+...
+```
 
 
 ## `mbs-build`
 
 [Link](https://pagure.io/fm-orchestrator/)
 
-[Local builds](https://docs.pagure.org/modularity/development/building-modules/building-local.html)
+[Local builds](https://docs.pagure.org/modularity/development/building-modules/building-local.html)  
 [Infrastructure builds](https://docs.pagure.org/modularity/development/building-modules/building-infra.html)
 
 
