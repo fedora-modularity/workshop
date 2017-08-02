@@ -6,6 +6,10 @@ This workshop should teach you how you can create your own modules.
 
 The plan is to utilize existing guides and just link to them.
 
+Before we start, feel free to look into [Stephen Gallagher's](https://github.com/sgallagher) blog posts on module packaging:
+ * [Sausage Factory: An introduction to building modules in Fedora](https://sgallagh.wordpress.com/2017/05/30/sausage-factory-an-introduction-to-building-modules-in-fedora/)
+ * [Sausage Factory: Advanced module building in Fedora](https://sgallagh.wordpress.com/2017/06/30/sausage-factory-advanced-module-building-in-fedora/)
+
 
 ## High-level agenda
 
