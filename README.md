@@ -35,18 +35,29 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 
 ## modulemd
 
- * a specification
- * a library
+Modulemd stands for two things:
+
+ 1. a specification
+ 2. a library
 
 
 ### The specification
 
- * [link](https://pagure.io/modulemd/blob/master/f/spec.yaml)
+The modulemd file allows you to describe your module:
+ * module description
+ * licensing
+ * build-time and runtime dependencies
+ * module API
+ * module components and artifacts
+
+Modulemd is agnostic of packaging formats (at the same time, it's implemnted for RPM only now).
+
+ * [the specification](https://pagure.io/modulemd/blob/master/f/spec.yaml)
  * [a real example](http://pkgs.fedoraproject.org/cgit/modules/nodejs.git/tree/nodejs.yaml?h=f26)
- * [list of modules](http://pkgs.fedoraproject.org/cgit/modules)
+ * [list of existing modules](http://pkgs.fedoraproject.org/cgit/modules)
  * interesting modules:
    * platform module
-     * to have builds available during first week of August, 2017
+     * TODO: link; platform should have builds available during first week of August, 2017
      * is still a work in-progress
    * base-runtime
    * shared-userspace
