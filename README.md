@@ -2,7 +2,7 @@
 
 **This is still a work in progress.**
 
-This workshop should teach you how to create modules for your Fedora RPMs.
+This workshop should teach you how you can create your own modules.
 
 The plan is to utilize existing guides and just link to them.
 
