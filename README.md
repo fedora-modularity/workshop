@@ -1,7 +1,5 @@
 # Modularity workshop
 
-**This is still a work in progress.**
-
 This workshop should teach you how you can create your own modules.
 
 The plan is to utilize existing guides and just link to them.
@@ -19,7 +17,6 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 4. [`mbs-build`](#mbs-build)
 5. [Testing](#testing)
 7. [Feedback](#we-need-your-feedback)
-8. Beer
 
 
 # The workshop
@@ -43,7 +40,7 @@ Have a look at a real example of [nodejs module](http://pkgs.fedoraproject.org/c
 
 ## Workflow
 
-All modules will use a [platform module](http://pkgs.fedoraproject.org/cgit/modules/platform.git/tree/platform.yaml) as a build and runtme dependency. Platform is the base system and common, shared userland.
+All modules will use a [platform module](http://pkgs.fedoraproject.org/cgit/modules/platform.git/tree/platform.yaml) as a build and runtime dependency. Platform is the base system and common, shared userland.
 
 To create a module, you need to define a **top-level package set** representing your module, and **resolve missing dependencies** between your package set and the platform module. A simple example:
 
@@ -76,6 +73,8 @@ At the **beginning of development of the F27 Server**, all of these modules will
 [Link](https://pagure.io/modularity/modularity-tools)
 
 ```
+$ sudo dnf install -y modtools
+
 $ mod-tools rpm2module nodejs npm
 ```
 
