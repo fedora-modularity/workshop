@@ -90,11 +90,11 @@ Keep identifying new modules, defining their top-lvl components, resolving depen
 
 ## Other tools
 
-[Guide](https://docs.pagure.org/modularity/development/building-modules.html)
+[Guide for building modules](https://docs.pagure.org/modularity/development/building-modules.html)
 
  * guidelines (TODO)
  * [branching](https://fedoraproject.org/wiki/Changes/ArbitraryBranching#Current_status)
- * bootstrapping
+
 
 ### Modularity tools
 
