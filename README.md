@@ -27,50 +27,43 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 
 ## 1-minute-intro
 
- * decouple component version from an [OS release](https://docs.pagure.org/modularity/)
- * provide a solution for component maintainers to supply more versions of one component
- * lifecycles and support level can vary between modules
- * module authors to define how the module is meant to be built and utilized by users
+Modularity cuts Linux distributions into **modules**, giving them **independent lifecycles**, and making them available in **multiple streams**. Giving more options of choice to users, and flexibility and control to packagers.
 
+<img src="/img/modularity-basics-1.png" width=600px>
+
+See the **official [Fedora Modularity documentation](https://docs.pagure.org/modularity/)** for more information
 
 ## modulemd
 
-Modulemd stands for two things:
+Modules are defined in a [modulemd](https://pagure.io/modulemd) file.
 
- 1. a specification
- 2. a library
+As opposed to traditional distributions, where all packages are built and shipped in a single monolythic release, Modularity needs a mechanism of defining which package goes into what module. And that's modulemd.
 
-
-### The specification
-
-The modulemd file allows you to describe your module:
- * module description
- * licensing
- * build-time and runtime dependencies
- * module API
- * module components and artifacts
-
-Modulemd is agnostic of packaging formats (at the same time, it's implemnted for RPM only now).
-
- * [the specification](https://pagure.io/modulemd/blob/master/f/spec.yaml)
- * [a real example](http://pkgs.fedoraproject.org/cgit/modules/nodejs.git/tree/nodejs.yaml?h=f26)
- * [list of existing modules](http://pkgs.fedoraproject.org/cgit/modules)
- * interesting modules:
-   * platform module
-     * TODO: link; platform should have builds available during first week of August, 2017
-     * is still a work in-progress
-   * base-runtime
-   * shared-userspace
-   * common-build-dependencies
-   * common-build-dependencies-bootstrap
- * runtime dependencies
- * build-time dependencies
- * module components
- * filtering
- * API
-
+Have a look at a real example of [nodejs module](http://pkgs.fedoraproject.org/cgit/modules/nodejs.git/tree/nodejs.yaml?h=f26).
 
 ## Workflow
+
+All modules will use a [platform module](http://pkgs.fedoraproject.org/cgit/modules/platform.git/tree/platform.yaml) as a build and runtme dependency. Platform is the base system and common, shared userland.
+
+To create a module, you need to define a **top-level package set** representing your module, and **resolve missing dependencies** between your package set and the platform module. A simple example:
+
+<img src="/img/defining-modules-1-simple.png" width=600px>
+
+### More complex module
+
+Unfortunatelly, it's not easy every time. Many packages will have **complex dependencies**:
+
+<img src="/img/defining-modules-2-complex-bad.png" width=600px>
+
+As you might have guessed, bundling all dependencies is not the right thing to do in this example. Instead, we need to identify **other modules**, and use these as dependencies:
+
+<img src="/img/defining-modules-2-complex-good.png" width=600px>
+
+At the **beginning of development of the F27 Server**, all of these modules will need to get indentified and built. However, when we are done with the initial set, packagers will be able to use what's already available.
+## 1-minute-intro
+
+
+## Other tools
 
 [Guide](https://docs.pagure.org/modularity/development/building-modules.html)
 
@@ -155,3 +148,4 @@ coreutils-8.27-13.fc27.x86_64
 
 
 ## We need your feedback!
+
