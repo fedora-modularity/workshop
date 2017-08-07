@@ -57,7 +57,35 @@ As you might have guessed, bundling all dependencies is not the right thing to d
 <img src="/img/defining-modules-2-complex-good.png" width=600px>
 
 At the **beginning of development of the F27 Server**, all of these modules will need to get indentified and built. However, when we are done with the initial set, packagers will be able to use what's already available.
-## 1-minute-intro
+
+
+## Initial coordination
+
+As we saw above, there is a need for an initial coordination while idetifying and defining the initial set of modules. How to handle that?
+
+The [dependency-report](https://github.com/fedora-modularity/dependency-report) repository along with the [modularity-modules](https://github.com/modularity-modules/) space is the answer.
+
+### Step 1: Get a set of initial modules
+
+The Server WG requires to have at least FreeIPA, PostrgreSQL, NetworkManager, Cockpit, storaged.
+
+### Step 2: Identify top-lvl components
+
+This is done in the [modularity-modules](https://github.com/modularity-modules/) space.
+
+### Step 3: Run the dependency-report
+
+[dependency-report](https://github.com/fedora-modularity/dependency-report)
+
+Adam is running that periodically - output is saved in the repo. Everyone can run on their own.
+
+### Step 4: Identify new modules, extend components of existing ones...
+
+An example: [freeipa](https://github.com/fedora-modularity/dependency-report/blob/master/modules/freeipa/x86_64/runtime-binary-packages-short.txt) - do you see something that could be a new module? Hint: Python 2, Python 3, Java, ...
+
+### Step ?: Keep iterating until you're done! 
+
+Keep identifying new modules, defining their top-lvl components, resolving dependnecies... When it feels like we have a solid base, we can start generating modulemd files and building them.
 
 
 ## Other tools
