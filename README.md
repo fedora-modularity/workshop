@@ -176,3 +176,6 @@ coreutils-8.27-13.fc27.x86_64
 
 ## We need your feedback!
 
+Feel free to open an issue at this repo or at any upstream repository linked in the workshop.
+
+In case you want to reach out to a human being, [Adam Samalik](https://github.com/asamalik) is the main coordinator, you can contact him [on his e-mail address](mailto:asamalik@redhat.com).
