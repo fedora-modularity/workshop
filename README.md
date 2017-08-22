@@ -21,6 +21,11 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 
 # The workshop
 
+TODO:
+* [ ] record steps of a basic module build
+* [ ] mention that bootstrap module needs to be downloaded
+* [ ] everyone can see my terminal (font and colors are acceptable)
+
 
 ## 1-minute-intro
 
