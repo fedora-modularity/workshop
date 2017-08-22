@@ -36,11 +36,11 @@ Modules are defined in a [modulemd](https://pagure.io/modulemd) file.
 
 As opposed to traditional distributions, where all packages are built and shipped in a single monolythic release, Modularity needs a mechanism of defining which package goes into what module. And that's modulemd.
 
-Have a look at a real example of [nodejs module](http://pkgs.fedoraproject.org/cgit/modules/nodejs.git/tree/nodejs.yaml?h=f26).
+Have a look at a real example of [nodejs module](https://src.fedoraproject.org/modules/nodejs/blob/master/f/nodejs.yaml).
 
 ## Workflow
 
-All modules will use a [platform module](http://pkgs.fedoraproject.org/cgit/modules/platform.git/tree/platform.yaml) as a build and runtime dependency. Platform is the base system and common, shared userland.
+All modules will use a [platform module](https://src.fedoraproject.org/modules/platform/blob/master/f/platform.yaml) as a build and runtime dependency. Platform is the base system and common, shared userland.
 
 To create a module, you need to define a **top-level package set** representing your module, and **resolve missing dependencies** between your package set and the platform module. A simple example:
 
@@ -92,13 +92,13 @@ Keep identifying new modules, defining their top-lvl components, resolving depen
 
 [Guide for building modules](https://docs.pagure.org/modularity/development/building-modules.html)
 
- * guidelines (TODO)
+ * [guidelines](https://fedoraproject.org/wiki/Module:Guidelines)
  * [branching](https://fedoraproject.org/wiki/Changes/ArbitraryBranching#Current_status)
 
 
 ### Modularity tools
 
-[Link](https://pagure.io/modularity/modularity-tools)
+[Upstream repository.](https://pagure.io/modularity/modularity-tools)
 
 ```
 $ sudo dnf install -y modtools
@@ -161,10 +161,11 @@ coreutils-8.27-13.fc27.x86_64
 
 ## `mbs-build`
 
-[Link](https://pagure.io/fm-orchestrator/)
+[Upstream repository](https://pagure.io/fm-orchestrator/)
 
-[Local builds](https://docs.pagure.org/modularity/development/building-modules/building-local.html)  
-[Infrastructure builds](https://docs.pagure.org/modularity/development/building-modules/building-infra.html)
+Documentation how to do:
+ * [Local builds](https://docs.pagure.org/modularity/development/building-modules/building-local.html)
+ * [Infrastructure builds](https://docs.pagure.org/modularity/development/building-modules/building-infra.html)
 
 
 ## Testing
