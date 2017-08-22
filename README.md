@@ -22,9 +22,18 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 # The workshop
 
 TODO:
-* [ ] record steps of a basic module build
+* [ ] prepare real module build:
+  * start from scratch
+  * use autotools
+  * start with platform/host
+  * show what's wrong and explain why it's wrong
+  * use bootstrap
+  * explain it
+  * talk about transition away from bootstrap
+  * record outputs here so it can be demonstrated without internet connection
 * [ ] mention that bootstrap module needs to be downloaded
 * [ ] everyone can see my terminal (font and colors are acceptable)
+  * don't use black background
 
 
 ## 1-minute-intro
