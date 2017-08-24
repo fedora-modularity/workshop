@@ -15,22 +15,14 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 2. [modulemd](#modulemd)
 3. [Workflow](#workflow)
 4. [`mbs-build`](#mbs-build)
-5. [Testing](#testing)
+5. [Let's create autotools module!](#Lets-create-autotools-module!)
+6. [Testing](#testing)
 7. [Feedback](#we-need-your-feedback)
 
 
 # The workshop
 
 TODO:
-* [ ] prepare real module build:
-  * start from scratch
-  * use autotools
-  * start with platform/host
-  * show what's wrong and explain why it's wrong
-  * use bootstrap
-  * explain it
-  * talk about transition away from bootstrap
-  * record outputs here so it can be demonstrated without internet connection
 * [ ] mention that bootstrap module needs to be downloaded
 * [ ] everyone can see my terminal (font and colors are acceptable)
   * don't use black background
@@ -99,7 +91,7 @@ An example: [freeipa](https://github.com/fedora-modularity/dependency-report/blo
 
 ### Step ?: Keep iterating until you're done! 
 
-Keep identifying new modules, defining their top-lvl components, resolving dependnecies... When it feels like we have a solid base, we can start generating modulemd files and building them.
+Keep identifying new modules, defining their top-lvl components, resolving dependencies... When it feels like we have a solid base, we can start generating modulemd files and building them.
 
 
 ## Other tools
@@ -180,6 +172,154 @@ coreutils-8.27-13.fc27.x86_64
 Documentation how to do:
  * [Local builds](https://docs.pagure.org/modularity/development/building-modules/building-local.html)
  * [Infrastructure builds](https://docs.pagure.org/modularity/development/building-modules/building-infra.html)
+
+
+## Let's create autotools module!
+
+### Step 1, modulemd
+
+What should be in the module? `automake`, `autoconf` and `libtool`, right?
+
+```yaml
+document: modulemd
+version: 1
+data:
+    summary: GNU toolchain (autoconf, automake, libtool)
+    description: >
+        This module is composed of well-known GNU tools, such as autoconf,
+        automake and libtool.
+    license:
+        module:
+            - MIT
+        content: []
+    references:
+        community: https://github.com/modularity-modules/autotools
+        documentation: https://github.com/modularity-modules/autotools
+        tracker: https://github.com/modularity-modules/autotools/issues
+    components:
+        rpms:
+            autoconf:
+                rationale: Primary component of this module.
+                ref: master
+            automake:
+                rationale: Primary component of this module.
+                ref: master
+            libtool:
+                rationale: Primary component of this module.
+                ref: master
+```
+
+What's missing?
+
+
+### Step 2, platform module
+
+Dependencies, right!
+
+```yaml
+document: modulemd
+version: 1
+data:
+    summary: GNU toolchain (autoconf, automake, libtool)
+    description: >
+        This module is composed of well-known GNU tools, such as autoconf,
+        automake and libtool.
+    license:
+        module:
+            - MIT
+        content: []
+    dependencies:
+        buildrequires:
+            platform: master
+            host: master
+        requires:
+            platform: master
+            host: master
+    references:
+        community: https://github.com/modularity-modules/autotools
+        documentation: https://github.com/modularity-modules/autotools
+        tracker: https://github.com/modularity-modules/autotools/issues
+    components:
+        rpms:
+            autoconf:
+                rationale: Primary component of this module.
+                ref: master
+            automake:
+                rationale: Primary component of this module.
+                ref: master
+            libtool:
+                rationale: Primary component of this module.
+                ref: master
+```
+
+Seems like the build fails with:
+
+```
+ # /usr/bin/dnf builddep --installroot /var/lib/mock/module-autotools-master-20170824142446-Thread-25/root/ /var/lib/mock/module-autotools-master-20170824142446-Thread-25/root//builddir/build/SRPMS/libtool-2.4.6-20.module_2503b24e.src.rpm
+Last metadata expiration check: 0:00:00 ago on Thu 24 Aug 2017 04:29:40 PM CEST.
+No matching package to install: 'autoconf'
+No matching package to install: 'automake'
+No matching package to install: 'help2man'
+Package libstdc++-devel-7.1.1-7.module_6faa4f4e.1.x86_64 is already installed, skipping.
+Not all dependencies satisfied
+Error: Some packages could not be found.
+```
+
+Where do we get those dependencies?
+
+
+### Step 3, bootstrap module
+
+```yaml
+document: modulemd
+version: 1
+data:
+    summary: GNU toolchain (autoconf, automake, libtool)
+    description: >
+        This module is composed of well-known GNU tools, such as autoconf,
+        automake and libtool.
+    license:
+        module:
+            - MIT
+        content: []
+    dependencies:
+        buildrequires:
+            bootstrap: master
+        requires:
+            platform: master
+            host: master
+    references:
+        community: https://github.com/modularity-modules/autotools
+        documentation: https://github.com/modularity-modules/autotools
+        tracker: https://github.com/modularity-modules/autotools/issues
+    components:
+        rpms:
+            autoconf:
+                rationale: Primary component of this module.
+                ref: master
+            automake:
+                rationale: Primary component of this module.
+                ref: master
+            libtool:
+                rationale: Primary component of this module.
+                ref: master
+```
+
+Does the build pass?
+
+```
+```
+
+Can we install the module?
+
+
+### Step 4, runtime dependencies
+
+So, what binary RPMs do we need?
+
+[These.](https://github.com/fedora-modularity/dependency-report/blob/master/modules/autotools/x86_64/standalone-runtime-binary-packages-short.txt)
+
+How do we figure out in which modules these are available? And are they actually in some module?
 
 
 ## Testing
