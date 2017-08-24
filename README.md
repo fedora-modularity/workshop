@@ -308,12 +308,26 @@ data:
 Does the build pass?
 
 ```
+Finish: rpmbuild automake-1.15.1-2.module_ac4d13ab.src.rpm
+Finish: build phase for automake-1.15.1-2.module_ac4d13ab.src.rpm
+INFO: Done(/home/tt/modulebuild/builds/module-autotools-master-20170824143320/results/Thread-26/automake-1.15.1-2.module_ac4d13ab.src.rpm) Config(mock-Thread-26) 4 minutes 48 seconds
+INFO: Results and/or logs in: /home/tt/modulebuild/builds/module-autotools-master-20170824143320/results/Thread-26
+INFO: Cleaning up build root ('cleanup_on_success=True')
+Start: clean chroot
+DEBUG: kill orphans
+DEBUG: child environment: None
+DEBUG: Executing command: ['/bin/umount', '-n', '/var/lib/mock/module-autotools-master-20170824143320-Thread-26/root/var/cache/dnf/'] with env {'TERM': 'vt100', 'SHELL': '/bin/sh', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'LANG': 'en_US.utf8'} and shell False
+DEBUG: Child return code was: 0
 ```
+
+Indeed.
 
 Can we install the module?
 
 
 ### Step 4, runtime dependencies
+
+Ehm, I don't know.
 
 So, what binary RPMs do we need?
 
