@@ -23,7 +23,6 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 # The workshop
 
 TODO:
-* [ ] mention that bootstrap module needs to be downloaded
 * [ ] everyone can see my terminal (font and colors are acceptable)
   * don't use black background
 
@@ -328,6 +327,8 @@ data:
                 rationale: Primary component of this module.
                 ref: master
 ```
+
+(running `mbs-build local` here for the first time downloads all 15000 packages of bootstrap module)
 
 Does the build pass?
 
