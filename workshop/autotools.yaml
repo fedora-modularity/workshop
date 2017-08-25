@@ -1,0 +1,26 @@
+document: modulemd
+version: 1
+data:
+    summary: GNU toolchain (autoconf, automake, libtool)
+    description: >
+        This module is composed of well-known GNU tools, such as autoconf,
+        automake and libtool.
+    license:
+        module:
+            - MIT
+        content: []
+    references:
+        community: https://github.com/modularity-modules/autotools
+        documentation: https://github.com/modularity-modules/autotools
+        tracker: https://github.com/modularity-modules/autotools/issues
+    components:
+        rpms:
+            autoconf:
+                rationale: Primary component of this module.
+                ref: master
+            automake:
+                rationale: Primary component of this module.
+                ref: master
+            libtool:
+                rationale: Primary component of this module.
+                ref: master
