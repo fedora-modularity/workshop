@@ -15,7 +15,7 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
 2. [modulemd](#modulemd)
 3. [Workflow](#workflow)
 4. [`mbs-build`](#mbs-build)
-5. [Let's create autotools module!](#Lets-create-autotools-module!)
+5. [Let's create autotools module!](#lets-create-autotools-module)
 6. [Testing](#testing)
 7. [Feedback](#we-need-your-feedback)
 
@@ -250,6 +250,17 @@ data:
             libtool:
                 rationale: Primary component of this module.
                 ref: master
+```
+
+So let's build:
+
+```
+$ mkdir autotools
+$ cd autotools
+$ vim autotools.yaml
+<shift-insert>
+$ git init . && git add . && git commit -m init
+$ mbs-build local
 ```
 
 Seems like the build fails with:
