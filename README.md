@@ -176,6 +176,19 @@ Documentation how to do:
 
 ## Let's create autotools module!
 
+### Step 0, naming
+
+What will be the name of our module? What streams will we provide?
+
+Good name for stream (dist-git branch) is a version of the software. Let's have a look at latest versions of packages we want to put into the module:
+
+* `autoconf-2.69-25`
+* `automake-1.15.1`
+* `libtool-2.4.6`
+
+Versions don't seem to be in sync.
+
+
 ### Step 1, modulemd
 
 What should be in the module? `automake`, `autoconf` and `libtool`, right?
@@ -345,6 +358,17 @@ So, what binary RPMs do we need?
 [These.](https://github.com/fedora-modularity/dependency-report/blob/master/modules/autotools/x86_64/standalone-runtime-binary-packages-short.txt)
 
 How do we figure out in which modules these are available? And are they actually in some module?
+
+[This file could help.](https://github.com/fedora-modularity/dependency-report/blob/master/global_reports/all-binary-pkgs-occurrences.txt)
+
+
+### Step 5, the review
+
+As described in [the official review process](https://fedoraproject.org/wiki/Module:Review_Process), you need to [create a new bug](https://fedoraproject.org/wiki/Module:Review_Process#Module_Metadata_Files) to initiate the review process.
+
+[It may look like this one.](https://bugzilla.redhat.com/show_bug.cgi?id=1484409)
+
+We suggest to go to Freenode IRC channel `#fedora-modularity` and find a reviewer.
 
 
 ## Testing
