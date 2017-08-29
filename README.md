@@ -9,6 +9,35 @@ Before we start, feel free to look into [Stephen Gallagher's](https://github.com
  * [Sausage Factory: Advanced module building in Fedora](https://sgallagh.wordpress.com/2017/06/30/sausage-factory-advanced-module-building-in-fedora/)
 
 
+## Prerequisite
+
+If you plan to attend the workshop, please follow the instructions bellow so
+you'll have all the required content ready on your laptop for the workshop.
+
+Install the build tools:
+
+```
+$ sudo dnf install module-build-service
+```
+
+Clone this repository...
+
+```
+$ git clone https://github.com/fedora-modularity/workshop
+```
+
+...and switch to `test-module/` directory, initiate a new git repository and
+build the test module so all the build dependencies are cached for the workshop
+(may be up to 11G (remove `bootstrap: master` line from `test-module.yaml` if
+you want to down it to just ~1G):
+
+```
+$ cd workshop/test-module
+$ git init . && git add . && git commit -m init
+$ mbs-build local
+```
+
+
 ## High-level agenda
 
 1. [1-minute-intro to modularity](#1-minute-intro)

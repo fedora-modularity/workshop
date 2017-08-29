@@ -1,0 +1,17 @@
+document: modulemd
+version: 1
+data:
+    summary: A test module in all its beautiful beauty
+    description: >-
+        This module demonstrates how to write simple modulemd files And
+        can be used for testing the build and release pipeline.
+    dependencies:
+        buildrequires:
+            platform: master
+            bootstrap: master
+            host: master
+    components:
+        rpms:
+            hostname:
+                rationale: A primary testing component
+                ref: master
