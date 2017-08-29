@@ -381,6 +381,8 @@ We suggest to go to Freenode IRC channel `#fedora-modularity` and find a reviewe
 
 ## We need your feedback!
 
-Feel free to open an issue at this repo or at any upstream repository linked in the workshop.
+You can find F&Q and Feedback document over [here](https://docs.google.com/document/d/1SaGvw703pzKki2YVcGswuggcIqpwqqz5qPRc42xHXyU/edit). Feel free to ask your question and someone will answer it soon or later.
 
-In case you want to reach out to a human being, [Adam Samalik](https://github.com/asamalik) is the main coordinator, you can contact him [on his e-mail address](mailto:asamalik@redhat.com).
+You can also open an issue at any upstream repository linked in the workshop.
+
+Alternatively, you may ask your question on [webchat.freenode.net](https://webchat.freenode.net/?channels=fedora-modularity) and someone should answer it right away.
