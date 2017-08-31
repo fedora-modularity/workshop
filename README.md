@@ -17,7 +17,7 @@ you'll have all the required content ready on your laptop for the workshop.
 Install the build tools:
 
 ```
-$ sudo dnf install module-build-service
+$ sudo dnf install module-build-service mock-scm
 ```
 
 Clone this repository...
